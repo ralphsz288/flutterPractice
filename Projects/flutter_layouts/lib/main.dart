@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layouts/screens/photo_screen.dart';
-import 'package:flutter_layouts/screens/pizza_screen.dart';
-import 'package:flutter_layouts/screens/rows_and_columns_screen.dart';
-import 'package:flutter_layouts/screens/stack_screen.dart';
+import 'package:flutter_layouts/screens/listView/contacts_list.dart';
+import 'package:flutter_layouts/screens/gridView/gridView_example.dart';
+import 'package:flutter_layouts/screens/listView/list_view_example.dart';
+import 'package:flutter_layouts/screens/container/photo_screen.dart';
+import 'package:flutter_layouts/screens/container/pizza_screen.dart';
+import 'package:flutter_layouts/screens/navigation_examples/art_route_popup.dart';
+import 'package:flutter_layouts/screens/rows_and_columns/rows_and_columns_screen.dart';
+import 'package:flutter_layouts/screens/stack/stack_screen.dart';
+import 'package:flutter_layouts/utils/art_util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +41,7 @@ class MyApp extends StatelessWidget {
             color: Colors.black,
           )),
       ),
-      home: const PizzaScreen(),
+      home: const ArtRoute(art: ArtUtil.IMG_VANGOGH,),
     );
   }
 }

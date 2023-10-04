@@ -5,14 +5,8 @@ class StackScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeX = MediaQuery
-        .of(context)
-        .size
-        .width;
-    final sizeY = MediaQuery
-        .of(context)
-        .size
-        .height;
+    final sizeX = MediaQuery.of(context).size.width;
+    final sizeY = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Rows and columns'),
@@ -39,15 +33,17 @@ List<Widget> createSquares(int number) {
     Colors.purple
   ];
   List<Widget> squares = [];
-  squares.add(Container(color: Colors.black,));
+  squares.add(Container(
+    color: Colors.black,
+  ));
   while (i < number) {
     Positioned square = Positioned(
-      top: 100 + i.toDouble()*100,
-      left: 25 + i.toDouble()*25,
+      top: 100 + i.toDouble() * 100,
+      left: 25 + i.toDouble() * 25,
       child: Container(
         color: colors[i],
-        width: 60.0 * (number-i),
-        height: 60.0 * (number-i),
+        width: 60.0 * (number - i),
+        height: 60.0 * (number - i),
         child: Text(i.toString()),
       ),
     );

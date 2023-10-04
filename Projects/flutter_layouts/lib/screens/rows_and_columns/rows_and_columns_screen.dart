@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../utils/create_squares.dart';
+import '../../utils/create_squares.dart';
 
 class RowsAndColumnsScreen extends StatelessWidget {
   const RowsAndColumnsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final sizeX = MediaQuery
-        .of(context)
-        .size
-        .width;
-    final sizeY = MediaQuery
-        .of(context)
-        .size
-        .height;
+    final sizeX = MediaQuery.of(context).size.width;
+    final sizeY = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Rows and columns'),

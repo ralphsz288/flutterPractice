@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 List<Widget> createSquares(int number) {
@@ -15,7 +16,7 @@ List<Widget> createSquares(int number) {
     Expanded square = Expanded(
       // flex: i,
       child: Container(
-        color: colors[i],
+        color: colors[i % 5],
         width: 60,
         height: 60,
         child: Text(i.toString()),

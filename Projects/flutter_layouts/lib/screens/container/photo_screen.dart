@@ -17,9 +17,11 @@ class PhotoScreen extends StatelessWidget {
           color: Colors.orange,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.all(Radius.circular(50)),
-          gradient: LinearGradient(colors: [Colors.pink,Colors.red,Colors.redAccent]),
+          gradient: LinearGradient(
+              colors: [Colors.pink, Colors.red, Colors.redAccent]),
           image: DecorationImage(
-            image: NetworkImage('https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4e7.png'),
+            image: NetworkImage(
+                'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4e7.png'),
             repeat: ImageRepeat.repeat,
           ),
         ),
@@ -29,18 +31,9 @@ class PhotoScreen extends StatelessWidget {
         child: Icon(Icons.lightbulb),
       ),
       persistentFooterButtons: const [
-        IconButton(
-            onPressed: null,
-            icon: Icon(Icons.add_comment)
-        ),
-        IconButton(
-            onPressed: null,
-            icon: Icon(Icons.add_alarm)
-        ),
-        IconButton(
-            onPressed: null,
-            icon: Icon(Icons.add_location)
-        ),
+        IconButton(onPressed: null, icon: Icon(Icons.add_comment)),
+        IconButton(onPressed: null, icon: Icon(Icons.add_alarm)),
+        IconButton(onPressed: null, icon: Icon(Icons.add_location)),
       ],
     );
   }
