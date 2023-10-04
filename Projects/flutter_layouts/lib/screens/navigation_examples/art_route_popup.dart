@@ -7,9 +7,66 @@ class ArtRoute extends StatelessWidget {
 
   const ArtRoute({required this.art, Key? key}) : super(key: key);
 
+  static int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                  color: Colors.blueGrey,
+                  image: DecorationImage(
+                      image: NetworkImage('http://bit.ly/fl_sky'),
+                      fit: BoxFit.fill)),
+              child: Text(
+                'Choose your art',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+            ListTile(
+              title: const Text(ArtUtil.CARAVAGGIO),
+              trailing: const Icon(Icons.art_track),
+              onTap: () => changeRoute(context, ArtUtil.CARAVAGGIO),
+            ),
+            ListTile(
+              title: const Text(ArtUtil.MONET),
+              trailing: const Icon(Icons.art_track),
+              onTap: () => changeRoute(context, ArtUtil.MONET),
+            ),
+            ListTile(
+              title: const Text(ArtUtil.VANGOGH),
+              trailing: const Icon(Icons.art_track),
+              onTap: () => changeRoute(context, ArtUtil.VANGOGH),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.red,
+        currentIndex: _currentIndex,
+        items:  const [
+          BottomNavigationBarItem(
+            label: ArtUtil.CARAVAGGIO,
+            icon: Icon(Icons.art_track),
+          ),
+          BottomNavigationBarItem(
+            label: ArtUtil.MONET,
+            icon: Icon(Icons.art_track),
+          ),
+          BottomNavigationBarItem(
+            label: ArtUtil.VANGOGH,
+            icon: Icon(Icons.art_track),
+          ),
+        ],
+        onTap: (value) {
+          String _artist = ArtUtil.menuItems[value];
+          _currentIndex = value;
+          changeRoute(context, _artist);
+        },
+      ),
       appBar: AppBar(
         title: const Text('Art route'),
         actions: [
